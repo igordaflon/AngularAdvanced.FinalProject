@@ -1,0 +1,13 @@
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.deps.json
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.dll
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.pdb
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Business.dll
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Business.pdb
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.AssemblyReference.cache
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.AssemblyInfoInputs.cache
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.AssemblyInfo.cs
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.CoreCompileInputs.cache
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.CopyComplete
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.dll
+C:\Users\igor.couto\Documents\Projetos\Angular\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.pdb
