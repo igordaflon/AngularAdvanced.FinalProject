@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VYOPRVTk84JSgeg4VT9K5z+60Nsv9aLS03u7O4QHkr+BihzTNM31m6GRiPsZsCfa9Q52GtSHBOs4WFqa1L9XjA==",
+  "dgSpecHash": "GUBEN43v4yeNcs5tBcyAlp/UbC0Qv3h8wDtr4MASayETTABtrQHTvDGBlokTFTXCGZV0Qzyi5y5EEDWfrg2bbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\igor.couto\\Documents\\Projetos\\Angular\\back-end\\src\\DevIO.Business\\DevIO.Business.csproj",
+  "projectFilePath": "C:\\Users\\igor.couto\\Documents\\GitHub\\AngularAdvanced.FinalProject\\back-end\\src\\DevIO.Business\\DevIO.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\igor.couto\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
     "C:\\Users\\igor.couto\\.nuget\\packages\\system.componentmodel.annotations\\4.4.1\\system.componentmodel.annotations.4.4.1.nupkg.sha512"

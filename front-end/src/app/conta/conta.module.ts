@@ -9,6 +9,8 @@ import { ContaRoutingModule } from './conta.route';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { ContaAppComponent } from './conta.app.component';
+import { ContaService } from './services/conta.service';
+import { NarikCustomValidatorsModule } from '@narik/custom-validators';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,11 @@ import { ContaAppComponent } from './conta.app.component';
     ContaRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NarikCustomValidatorsModule
+  ],
+  providers: [
+    ContaService
   ]
 })
 export class ContaModule { }
