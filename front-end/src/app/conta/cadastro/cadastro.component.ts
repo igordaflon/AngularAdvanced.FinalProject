@@ -20,6 +20,8 @@ export class CadastroComponent implements OnInit, AfterViewInit {
   cadastroForm: FormGroup;
   usuario: Usuario;
 
+  mudancasNaoSalvas: boolean;
+
   validationMessages: ValidationMessages;
   genericValidator: GenericValidator;
   displayMessage: DisplayMessage = {};
@@ -66,6 +68,7 @@ export class CadastroComponent implements OnInit, AfterViewInit {
 
     merge(...controlBlurs).subscribe(() => {
       this.displayMessage = this.genericValidator.processarMensagens(this.cadastroForm);
+      this.mudancasNaoSalvas = true;
     });
   }
 
@@ -83,6 +86,7 @@ export class CadastroComponent implements OnInit, AfterViewInit {
         }
       }
       );
+      this.mudancasNaoSalvas = false;
     }
   }
 
