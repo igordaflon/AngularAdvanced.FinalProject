@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { fromEvent, merge, Observable } from 'rxjs';
 import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/utils/generic-form-validation';
+import { StringUtils } from 'src/app/utils/string-utils';
+import { CepConsulta } from '../models/CepConsulta';
 import { Fornecedor } from '../models/fornecedor';
 import { FornecedorService } from '../services/fornecedor.service';
 
@@ -70,7 +72,7 @@ export class NovoComponent implements OnInit {
       nome: ['', [Validators.required]],
       documento: ['', [Validators.required]],
       ativo: ['', [Validators.required]],
-      tipoFornecedor: ['', [Validators.required]],
+      tipoFornecedor: [1, [Validators.required]],
       endereco: this.fb.group({
         logradouro: ['', [Validators.required]],
         numero: ['', [Validators.required]],
@@ -121,10 +123,32 @@ export class NovoComponent implements OnInit {
     }
   }
 
+  buscarCep(cep: string){
+    this.fornecedorService.consultarCep(cep)
+      .subscribe(
+        cepRetorno => this.preencherEnderecoConsulta(cepRetorno),
+        erro => this.errors.push(erro)
+      )
+  }
+
+  preencherEnderecoConsulta(cepConsulta: CepConsulta){
+    this.fornecedorForm.patchValue({
+      endereco: {
+        logradouro: cepConsulta.logradouro,
+        bairro: cepConsulta.bairro,
+        cep: cepConsulta.cep,
+        cidade: cepConsulta.localidade,
+        estado: cepConsulta.uf
+      }
+    });
+  }
+
    adicionarFornecedor() {
     if (this.fornecedorForm.dirty && this.fornecedorForm.valid) {
       this.fornecedor = Object.assign({}, this.fornecedor, this.fornecedorForm.value);
       this.formResult = JSON.stringify(this.fornecedor);
+
+      this.fornecedor.endereco.cep = StringUtils.somenteNumeros(this.fornecedor.endereco.cep);
 
       this.fornecedorService.novoFornecedor(this.fornecedor)
         .subscribe(
