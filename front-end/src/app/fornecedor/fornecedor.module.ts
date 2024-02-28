@@ -12,6 +12,8 @@ import { FornecedorService } from './services/fornecedor.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NarikCustomValidatorsModule } from '@narik/custom-validators';
+import { NgBrazil } from 'ng-brazil';
+import { TextMaskModule } from 'angular2-text-mask';
 
 
 
