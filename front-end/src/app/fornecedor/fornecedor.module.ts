@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NarikCustomValidatorsModule } from '@narik/custom-validators';
 import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
+import { FornecedorResolve } from './services/fornecedor.resolve';
 
 
 
@@ -36,7 +37,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     NarikCustomValidatorsModule
   ],
   providers: [
-    FornecedorService
+    FornecedorService,
+    FornecedorResolve
   ]
 })
 export class FornecedorModule { }
