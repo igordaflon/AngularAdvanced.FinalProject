@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { catchError, map, Observable } from "rxjs";
 import { BaseService } from "src/app/services/base.service";
 import { CepConsulta } from "../models/CepConsulta";
+import { Endereco } from "../models/endereco";
 import { Fornecedor } from "../models/fornecedor";
 
 @Injectable()
@@ -40,13 +41,26 @@ export class FornecedorService extends BaseService {
     }
 
     atualizarFornecedor(fornecedor: Fornecedor): Observable<Fornecedor> {
-        return new Observable<Fornecedor>();
+        fornecedor.tipoFornecedor = fornecedor.tipoFornecedor == 1 ? +'1' : +'2';
+        return this.http
+            .put(this.UrlServiceV1 + "fornecedores/" + fornecedor.id, fornecedor, super.ObterAuthHeaderJson())
+            .pipe(
+                map(super.extractData),
+                catchError(super.serviceError));
     }
 
     excluirFornecedor(id: string): Observable<Fornecedor> {
         return new Observable<Fornecedor>();
     }    
 
+    atualizarEndereco(endereco: Endereco): Observable<Endereco> {
+        return this.http
+            .put(this.UrlServiceV1 + "fornecedores/endereco/" + endereco.id, endereco, super.ObterAuthHeaderJson())
+            .pipe(
+                map(super.extractData),
+                catchError(super.serviceError));
+    }
+    
     consultarCep(cep: string): Observable<CepConsulta> {
         return this.http
             .get<CepConsulta>(`https://viacep.com.br/ws/${cep}/json/`)
