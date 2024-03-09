@@ -17,7 +17,11 @@ const fornecedorRouterConfig: Routes = [
                 fornecedor: FornecedorResolve
             } 
         },
-        { path: 'detalhes/:id', component: DetalhesComponent },
+        { path: 'detalhes/:id', component: DetalhesComponent,
+            resolve: {
+                fornecedor: FornecedorResolve
+            } 
+        },
         { path: 'excluir/:id', component: ExcluirComponent }
     ]}
 ]
