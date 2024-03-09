@@ -32,7 +32,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FornecedorRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     NarikCustomValidatorsModule,
     NgxSpinnerModule
   ],
