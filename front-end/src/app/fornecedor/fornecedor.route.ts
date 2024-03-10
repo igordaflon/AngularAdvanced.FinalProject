@@ -7,12 +7,20 @@ import { FornecedorComponent } from "./fornecedor.component";
 import { ListaComponent } from "./lista/lista.component";
 import { NovoComponent } from "./novo/novo.component";
 import { FornecedorResolve } from "./services/fornecedor.resolve";
+import { fornecedorCanActivate } from "./services/fornecedor.guard";
 
 const fornecedorRouterConfig: Routes = [
     { path: '', component: FornecedorComponent, children: [
         { path: 'listar-todos', component: ListaComponent },
-        { path: 'adicionar-novo', component: NovoComponent },
-        { path: 'editar/:id', component: EditarComponent,
+        { 
+            path: 'adicionar-novo', component: NovoComponent, 
+            canActivate: [fornecedorCanActivate],
+            data: [{ claim: {nome: 'Fornecedor', valor: 'Adicionar'} }]
+        },
+        { 
+            path: 'editar/:id', component: EditarComponent,
+            canActivate: [fornecedorCanActivate],
+            data: [{ claim: {nome: 'Fornecedor', valor: 'Atualizar'} }],
             resolve: {
                 fornecedor: FornecedorResolve
             } 
@@ -22,7 +30,10 @@ const fornecedorRouterConfig: Routes = [
                 fornecedor: FornecedorResolve
             } 
         },
-        { path: 'excluir/:id', component: ExcluirComponent,
+        { 
+            path: 'excluir/:id', component: ExcluirComponent,
+            canActivate: [fornecedorCanActivate],
+            data: [{ claim: {nome: 'Fornecedor', valor: 'Excluir'} }],
             resolve: {
                 fornecedor: FornecedorResolve
             } 
