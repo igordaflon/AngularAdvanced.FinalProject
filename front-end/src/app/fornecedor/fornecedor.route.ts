@@ -7,7 +7,7 @@ import { FornecedorComponent } from "./fornecedor.component";
 import { ListaComponent } from "./lista/lista.component";
 import { NovoComponent } from "./novo/novo.component";
 import { FornecedorResolve } from "./services/fornecedor.resolve";
-import { fornecedorCanActivate } from "./services/fornecedor.guard";
+import { fornecedorCanActivate, novoFornecedorCanDeactivate } from "./services/fornecedor.guard";
 
 const fornecedorRouterConfig: Routes = [
     { path: '', component: FornecedorComponent, children: [
@@ -15,6 +15,7 @@ const fornecedorRouterConfig: Routes = [
         { 
             path: 'adicionar-novo', component: NovoComponent, 
             canActivate: [fornecedorCanActivate],
+            canDeactivate: [novoFornecedorCanDeactivate],
             data: [{ claim: {nome: 'Fornecedor', valor: 'Adicionar'} }]
         },
         { 

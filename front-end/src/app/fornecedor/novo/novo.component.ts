@@ -76,7 +76,7 @@ export class NovoComponent implements OnInit {
       endereco: this.fb.group({
         logradouro: ['', [Validators.required]],
         numero: ['', [Validators.required]],
-        complemento: ['', [Validators.required]],
+        complemento: [''],
         bairro: ['', [Validators.required]],
         cep: ['', [Validators.required]],
         cidade: ['', [Validators.required]],
@@ -154,15 +154,15 @@ export class NovoComponent implements OnInit {
         .subscribe(
           sucesso => { this.processarSucesso(sucesso) },
           falha => { this.processarFalha(falha) }
-        );
-
-      this.mudancasNaoSalvas = false;
+        );      
     }
   }
 
   processarSucesso(response: any) {
     this.fornecedorForm.reset();
     this.errors = [];
+
+    this.mudancasNaoSalvas = false;
 
     let toast = this.toastr.success('Fornecedor cadastrado com sucesso!', 'Sucesso!');
     if (toast) {

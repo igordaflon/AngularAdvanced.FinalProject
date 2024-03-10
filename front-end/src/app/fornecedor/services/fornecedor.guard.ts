@@ -1,10 +1,19 @@
 import { inject } from "@angular/core";
-import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
+import { ActivatedRouteSnapshot, CanActivateFn, CanDeactivateFn, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { LocalStorageUtils } from "src/app/utils/localstorage";
+import { FornecedorComponent } from "../fornecedor.component";
+import { NovoComponent } from "../novo/novo.component";
+
+export const novoFornecedorCanDeactivate: CanDeactivateFn<NovoComponent> = (component: NovoComponent) => {
+    if(component.mudancasNaoSalvas){
+        return window.confirm('Abandonar preenchimento do formulário?')
+    }
+    return true;
+};
 
 export const fornecedorCanActivate: CanActivateFn = (
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot,
+    state: RouterStateSnapshot
   ) => 
   {
     const router = inject(Router);
