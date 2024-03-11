@@ -8,11 +8,18 @@ import { AcessoNegadoComponent } from './navegacao/acesso-negado/acesso-negado.c
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'conta', loadChildren: () => import('./conta/conta.module')
+  { path: 'conta', 
+    loadChildren: () => import('./conta/conta.module')
       .then(m => m.ContaModule) 
   },
-  { path: 'fornecedores', loadChildren: () => import('./fornecedor/fornecedor.module')
-  .then(m => m.FornecedorModule) 
+  { path: 'fornecedores', 
+    loadChildren: () => import('./fornecedor/fornecedor.module')
+      .then(m => m.FornecedorModule) 
+  },
+  {
+    path: 'produtos',
+    loadChildren: () => import('./produto/produto.module')
+      .then(m => m.ProdutoModule)
   },
   { path: 'acesso-negado', component: AcessoNegadoComponent },
   { path: 'nao-encontrado', component: NotFoundComponent },
