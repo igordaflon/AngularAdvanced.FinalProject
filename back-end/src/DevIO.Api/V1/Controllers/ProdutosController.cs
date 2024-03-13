@@ -49,7 +49,7 @@ namespace DevIO.Api.V1.Controllers
             return produtoViewModel;
         }
 
-        [ClaimsAuthorize("Produto", "Adicionar")]
+        //[ClaimsAuthorize("Produto", "Adicionar")]
         [HttpPost]
         public async Task<ActionResult<ProdutoViewModel>> Adicionar(ProdutoViewModel produtoViewModel)
         {

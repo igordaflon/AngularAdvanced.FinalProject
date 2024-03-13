@@ -25,6 +25,7 @@
     "bootstrap": "^5.2.3",
     "js-brasil": "^2.6.1",
     "ng-brazil": "^3.0.0",
+    "ngx-image-cropper": "^7.2.1",
     "ngx-spinner": "^16.0.2",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.8.0",

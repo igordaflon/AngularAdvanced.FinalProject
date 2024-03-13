@@ -8,6 +8,9 @@ import { EditarComponent } from './editar/editar.component';
 import { DetalhesComponent } from './detalhes/detalhes.component';
 import { ProdutoRoutingModule } from './produto.route';
 import { ProdutoService } from './services/produto.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,11 @@ import { ProdutoService } from './services/produto.service';
   ],
   imports: [
     CommonModule,
-    ProdutoRoutingModule
+    RouterModule,
+    ProdutoRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ImageCropperModule
   ],
   providers: [
     ProdutoService
